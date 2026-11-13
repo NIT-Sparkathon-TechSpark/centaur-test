@@ -51,10 +51,6 @@ function Hook() {
             She did.
           </h1>
           <p className="slide-subtitle text-ink/70 mt-8 rise" style={d(400)}>The policy said no.</p>
-          <div className="mt-16 flex items-end gap-8 rise" style={d(600)}>
-            <div className="text-[200px] leading-none font-semibold tracking-tight text-hurt">40%</div>
-            <p className="slide-caption text-ink/60 pb-8">6 of 15 answers · 4 people · our pilot</p>
-          </div>
         </div>
         <div className="rise" style={d(400)}><div className="floaty">
           <div className="w-[400px] h-[720px] rounded-[64px] border-[10px] border-ink/15 bg-navy-2 p-8 flex flex-col gap-6 shadow-2xl">
