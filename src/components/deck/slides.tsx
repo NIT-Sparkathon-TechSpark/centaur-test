@@ -213,7 +213,7 @@ function Results() {
           </div>
         ))}
       </div>
-      <p className="slide-body-lg rise" style={d(1200)}>
+      <p className="slide-subtitle rise" style={d(1200)}>
         Adding a human <span className="serif text-hurt">didn't fix the AI.</span>
         <span className="slide-caption text-ink/55 ml-6">small early pilot</span>
       </p>
