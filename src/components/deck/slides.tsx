@@ -203,11 +203,11 @@ function Results() {
   return (
     <Frame kicker="What our pilot showed">
       <h2 className="slide-title rise">It depends on <span className="serif text-helped">the scenario.</span></h2>
-      <div className="flex-1 flex flex-col justify-center gap-8 max-w-[1300px]">
+      <div className="flex-1 flex flex-col justify-center gap-8">
         {rows.map((r, i) => (
           <div key={r.l} className="glass flex items-center gap-10 px-12 py-8 rise" style={d(300 + i * 250)}>
             <r.icon className={`size-14 ${r.c}`} />
-            <span className="slide-subtitle text-ink/60">{r.l}</span>
+            <span className="slide-subtitle text-ink/60 w-[320px]">{r.l}</span>
             <ArrowRight className={`size-10 ${r.c}`} />
             <span className={`slide-subtitle font-medium ${r.c}`}>{r.w}</span>
           </div>
