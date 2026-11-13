@@ -325,7 +325,7 @@ function Close() {
         <div className="flex-1">
           <p className="slide-body text-ink/70 rise">Everyone relies on the human in the loop. Nobody tests it.</p>
           <div className="text-[160px] leading-none mt-6 serif text-helped rise" style={d(500)}>Now you can.</div>
-          <p className="slide-subtitle mt-12 rise" style={d(900)}>Your turn — <span className="serif text-hurt">1 minute.</span></p>
+          <p className="slide-subtitle mt-12 rise" style={d(900)}>Your turn — <span className="serif text-hurt">give it a try.</span></p>
           <div className="slide-body mt-14 text-ink/85 rise" style={d(1300)}>Jay Shiroya · Srivathsa N Rao · Pranav Tiwari · Bohdan Zdorovets</div>
           <div className="slide-chrome mt-3 text-helped rise" style={d(1400)}>#NiTSparkathon</div>
         </div>
