@@ -214,7 +214,7 @@ function Results() {
         ))}
       </div>
       <p className="slide-subtitle rise" style={d(1200)}>
-        So you can't assume. <span className="serif text-hurt">You have to measure.</span>
+        We can't assume. <span className="serif text-hurt">We have to measure.</span>
       </p>
     </Frame>
   );
