@@ -195,23 +195,28 @@ function Jury() {
 
 /* 6 RESULTS */
 function Results() {
-  const bars = [
-    { l: "People alone", h: 55, c: "bg-ink/25" },
-    { l: "AI alone", h: 80, c: "bg-ink/40" },
-    { l: "People + AI", h: 62, c: "bg-hurt" },
+  const rows = [
+    { rank: "1st", l: "AI alone", icon: Bot, c: "text-ink", bg: "" },
+    { rank: "2nd", l: "People + AI", icon: Handshake, c: "text-hurt", bg: "!border-hurt/60 border-2", note: "people followed the AI's mistakes" },
+    { rank: "3rd", l: "People alone", icon: User, c: "text-ink/70", bg: "" },
   ];
   return (
     <Frame kicker="What our pilot showed">
-      <h2 className="slide-title rise">People + AI isn't <span className="serif text-hurt">automatically</span> better.</h2>
-      <div className="flex-1 flex items-end justify-center gap-20 mt-8">
-        {bars.map((b, i) => (
-          <div key={b.l} className="flex flex-col items-center justify-end h-[560px] w-[280px]">
-            <div className={`w-full rounded-t-[28px] ${b.c}`} style={{ height: `${b.h}%`, ...d(300 + i * 200) }} />
-            <div className="slide-body text-ink/85 mt-5">{b.l}</div>
+      <h2 className="slide-title rise">Who got it <span className="serif text-helped">right</span> most often?</h2>
+      <div className="flex-1 flex flex-col justify-center gap-8 max-w-[1300px]">
+        {rows.map((r, i) => (
+          <div key={r.l} className={`glass ${r.bg} flex items-center gap-10 px-12 py-8 rise`} style={d(300 + i * 250)}>
+            <span className={`text-[72px] font-semibold leading-none w-[150px] ${r.c}`}>{r.rank}</span>
+            <r.icon className={`size-16 ${r.c}`} />
+            <span className={`slide-subtitle font-medium ${r.c}`}>{r.l}</span>
+            {r.note && <span className="slide-body text-hurt ml-auto serif">{r.note}</span>}
           </div>
         ))}
       </div>
-      <p className="slide-caption text-ink/60 text-center mt-8 rise" style={d(1200)}>Small early pilot · a signal, not a claim</p>
+      <p className="slide-subtitle rise" style={d(1200)}>
+        Adding a human <span className="serif text-hurt">didn't fix the AI.</span>
+        <span className="slide-caption text-ink/55 ml-6">small early pilot</span>
+      </p>
     </Frame>
   );
 }
