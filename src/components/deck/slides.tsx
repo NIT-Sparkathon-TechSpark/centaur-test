@@ -81,29 +81,27 @@ function Hook() {
 
 /* 2 PROBLEM */
 function Problem() {
-  const nodes = [
-    { label: "AI suggests", icon: Bot, x: 960, y: 400 },
-    { label: "Human approves", icon: User, x: 1300, y: 810, q: true },
-    { label: "Decision", icon: CheckCircle2, x: 620, y: 810 },
+  const rows = [
+    { icon: Scale, text: "AI helps. AI hurts. Most tools can't tell the difference.", tone: "text-ink" },
+    { icon: Handshake, text: "So we test three: human alone · AI alone · human + AI", tone: "text-ink" },
+    { icon: AlertTriangle, text: "And we measure reliance: followed · ignored · followed too readily", tone: "text-hurt" },
   ];
   return (
-    <Frame>
+    <Frame kicker="The problem statement">
       <h2 className="slide-title rise" style={d(100)}>
-        Everyone trusts the <span className="serif text-helped">human in the loop.</span>
+        Pairing people with AI <span className="serif text-helped">can help.</span>
       </h2>
-      <h2 className="slide-title rise text-hurt mt-4" style={d(350)}>Nobody tests it.</h2>
-      <svg className="absolute inset-0" viewBox="0 0 1920 1080">
-        <circle cx="960" cy="560" r="300" fill="none" stroke="var(--ink)" strokeOpacity=".3" strokeWidth="6"
-          strokeDasharray="1900" strokeDashoffset="1900" style={{ animation: "dash 1.6s .5s ease forwards" }} transform="translate(0,170)" />
-      </svg>
-      {nodes.map((n, i) => (
-        <div key={n.label} className="absolute rise flex flex-col items-center" style={{ left: n.x - 140, top: n.y, width: 280, ...d(700 + i * 250) }}>
-          <div className={`size-32 rounded-full grid place-items-center ${n.q ? "bg-hurt pulse" : "glass"}`}>
-            {n.q ? <HelpCircle className="size-16" /> : <n.icon className="size-14" />}
+      <h2 className="slide-title rise text-hurt mt-4" style={d(300)}>It can also make wrong feel right.</h2>
+      <div className="mt-16 flex flex-col gap-6">
+        {rows.map((r, i) => (
+          <div key={r.text} className="rise glass rounded-full px-10 py-7 flex items-center gap-8" style={d(600 + i * 220)}>
+            <div className="size-16 rounded-full bg-ink/10 grid place-items-center shrink-0">
+              <r.icon className="size-8 text-ink/80" />
+            </div>
+            <div className={`slide-body ${r.tone}`}>{r.text}</div>
           </div>
-          <div className={`slide-body mt-4 ${n.q ? "text-hurt font-semibold" : "text-ink/80"}`}>{n.label}{n.q && "?"}</div>
-        </div>
-      ))}
+        ))}
+      </div>
     </Frame>
   );
 }
