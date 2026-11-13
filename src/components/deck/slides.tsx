@@ -196,31 +196,22 @@ function Jury() {
 /* 6 RESULTS */
 function Results() {
   const bars = [
-    { l: "People alone", v: "46%", h: 55, c: "bg-ink/25" },
-    { l: "AI alone", v: "67%", h: 80, c: "bg-ink/40" },
-    { l: "People + AI", v: "52%", h: 62, c: "bg-hurt" },
+    { l: "People alone", h: 55, c: "bg-ink/25" },
+    { l: "AI alone", h: 80, c: "bg-ink/40" },
+    { l: "People + AI", h: 62, c: "bg-hurt" },
   ];
   return (
-    <Frame kicker="Our pilot">
-      <h2 className="slide-title rise">Is people + AI <span className="serif text-helped">better?</span> <span className="serif text-hurt">Not automatically.</span></h2>
-      <div className="flex-1 flex items-end gap-24 mt-8">
-        <div className="flex items-end gap-14 h-[600px]">
-          {bars.map((b, i) => (
-            <div key={b.l} className="flex flex-col items-center justify-end h-full w-[220px]">
-              <div className="slide-subtitle font-semibold mb-4 rise" style={d(900 + i * 200)}>{b.v}</div>
-              <div className={`w-full rounded-t-[28px] ${b.c}`} style={{ height: `${b.h}%`, ...d(300 + i * 200) }} />
-              <div className="slide-caption text-ink/85 mt-4">{b.l}</div>
-            </div>
-          ))}
-        </div>
-        <div className="flex-1 pb-20 rise" style={d(1400)}>
-          <div className="glass p-14 inline-block border-t-4 !border-t-hurt">
-            <div className="slide-kicker text-ink/80">People + AI vs AI alone</div>
-            <div className="text-[170px] leading-none font-semibold text-hurt mt-4">−15<span className="slide-subtitle"> pts</span></div>
-            <div className="slide-caption text-ink/70 mt-6">4 people · 46 answers · 95% CI −41 to +8 pts</div>
+    <Frame kicker="What our pilot showed">
+      <h2 className="slide-title rise">People + AI isn't <span className="serif text-hurt">automatically</span> better.</h2>
+      <div className="flex-1 flex items-end justify-center gap-20 mt-8">
+        {bars.map((b, i) => (
+          <div key={b.l} className="flex flex-col items-center justify-end h-[560px] w-[280px]">
+            <div className={`w-full rounded-t-[28px] ${b.c}`} style={{ height: `${b.h}%`, ...d(300 + i * 200) }} />
+            <div className="slide-body text-ink/85 mt-5">{b.l}</div>
           </div>
-        </div>
+        ))}
       </div>
+      <p className="slide-caption text-ink/60 text-center mt-8 rise" style={d(1200)}>Small early pilot · a signal, not a claim</p>
     </Frame>
   );
 }
