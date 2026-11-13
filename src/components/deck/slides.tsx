@@ -215,7 +215,6 @@ function Results() {
       </div>
       <p className="slide-subtitle rise" style={d(1200)}>
         So you can't assume. <span className="serif text-hurt">You have to measure.</span>
-        <span className="slide-caption text-ink/55 ml-6">small early pilot</span>
       </p>
     </Frame>
   );
