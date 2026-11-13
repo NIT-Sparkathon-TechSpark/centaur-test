@@ -81,29 +81,37 @@ function Problem() {
       </h2>
       <p className="slide-subtitle text-ink/70 mt-6 rise" style={d(350)}>Most tools can't tell the difference.</p>
 
-      <div className="flex-1 flex flex-col items-center justify-center gap-16">
-        <div className="flex items-center gap-12">
-          <div className={`rise ${node}`} style={d(600)}>
-            <Bot className="size-20 text-ink/80" />
-            <div className="slide-body text-ink/70">AI</div>
-          </div>
-          <ArrowRight className="size-16 text-ink/30 rise" style={d(760)} />
-          <div className="rise relative" style={d(880)}>
-            <div className={`${node} px-20`}>
-              <User className="size-20 text-ink/80" />
-              <div className="slide-body text-ink/70">Human</div>
+      <div className="flex-1 flex items-center justify-center gap-24">
+        <div className="relative w-[640px] h-[640px] rise" style={d(500)}>
+          <svg viewBox="0 0 640 640" className="absolute inset-0">
+            <defs>
+              <marker id="ah" markerWidth="12" markerHeight="12" refX="6" refY="6" orient="auto">
+                <path d="M0,0 L12,6 L0,12 z" fill="currentColor" className="text-ink/40" />
+              </marker>
+            </defs>
+            <circle cx="320" cy="320" r="230" fill="none" stroke="currentColor" strokeWidth="5" strokeDasharray="14 14" className="text-ink/30 spin-slow" />
+          </svg>
+          {[
+            { x: 320, y: 90, icon: Bot, l: "AI suggests" },
+            { x: 519, y: 435, icon: User, l: "Human checks", q: true },
+            { x: 121, y: 435, icon: CheckCircle2, l: "Decision" },
+          ].map((n, i) => (
+            <div key={n.l} className="absolute -translate-x-1/2 -translate-y-1/2 rise" style={{ left: n.x, top: n.y, ...d(700 + i * 250) }}>
+              <div className="relative glass rounded-full size-[180px] flex flex-col items-center justify-center gap-2">
+                <n.icon className="size-16 text-ink/80" />
+                <div className="slide-caption text-ink/75">{n.l}</div>
+                {n.q && (
+                  <div className="absolute -top-4 -right-4 size-16 rounded-full bg-hurt grid place-items-center pulse">
+                    <span className="text-[42px] font-semibold text-navy leading-none">?</span>
+                  </div>
+                )}
+              </div>
             </div>
-            <div className="absolute -top-7 -right-7 size-16 rounded-full bg-hurt grid place-items-center pulse">
-              <span className="text-[42px] font-semibold text-navy leading-none">?</span>
-            </div>
-          </div>
-          <ArrowRight className="size-16 text-ink/30 rise" style={d(1020)} />
-          <div className={`rise ${node}`} style={d(1140)}>
-            <CheckCircle2 className="size-20 text-ink/80" />
-            <div className="slide-body text-ink/70">Decision</div>
-          </div>
+          ))}
         </div>
-        <p className="slide-body-lg text-ink/80 rise" style={d(1320)}>Checking — or just approving?</p>
+        <p className="slide-subtitle text-ink/85 max-w-[560px] rise" style={d(1500)}>
+          Checking — <br /><span className="serif text-hurt">or just approving?</span>
+        </p>
       </div>
     </Frame>
   );
@@ -187,55 +195,48 @@ function Jury() {
 
 /* 6 RESULTS */
 function Results() {
-  const bars = [
-    { l: "People alone", v: "46%", h: 55, c: "bg-ink/25" },
-    { l: "AI alone", v: "67%", h: 70, c: "bg-ink/40" },
-    { l: "People + AI", v: "52%", h: 62, c: "bg-helped" },
-  ];
   return (
-    <Frame kicker="Results">
-      <h2 className="slide-title rise">Are people + AI <span className="serif text-helped">better</span> than either?</h2>
-      <div className="flex-1 flex items-end gap-24 mt-8">
-        <div className="flex items-end gap-14 h-[600px]">
-          {bars.map((b, i) => (
-            <div key={b.l} className="flex flex-col items-center justify-end h-full w-[220px]">
-              <div className="slide-subtitle font-semibold mb-4 rise" style={d(900 + i * 200)}>{b.v}</div>
-              <div className={`w-full rounded-t-[28px] grow ${b.c}`} style={{ height: `${b.h}%`, ...d(300 + i * 200) }} />
-              <div className="slide-caption text-ink/85 mt-4">{b.l}</div>
-            </div>
-          ))}
+    <Frame kicker="The synergy metric">
+      <div className="flex-1 grid grid-cols-2 gap-12 items-stretch mt-4">
+        <div className="glass p-14 flex flex-col rise" style={d(200)}>
+          <div className="slide-kicker text-helped">Done right · clinical trials</div>
+          <div className="text-[220px] leading-none font-semibold text-helped mt-6">90%</div>
+          <p className="slide-body text-ink/80 mt-4">Human + AI beat humans <b>(81%)</b> and AI <b>(73%)</b>.</p>
         </div>
-        <div className="flex-1 pb-20 rise" style={d(1400)}>
-          <div className="glass p-14 inline-block">
-            <div className="slide-kicker text-ink/80">Centaur gain</div>
-            <div className="text-[150px] leading-none font-semibold text-hurt mt-4">−15 <span className="slide-subtitle">pts</span></div>
-            <div className="slide-caption text-ink/85 mt-6">4 people · 46 answers · 95% CI −41 to +8 pts</div>
-          </div>
+        <div className="glass p-14 flex flex-col rise border-t-4 !border-t-hurt" style={d(500)}>
+          <div className="slide-kicker text-hurt">Done wrong · our pilot</div>
+          <div className="text-[220px] leading-none font-semibold text-hurt mt-6">−15<span className="slide-subtitle"> pts</span></div>
+          <p className="slide-body text-ink/80 mt-4">People + AI <b>52%</b> vs AI alone <b>67%</b>.</p>
+          <p className="slide-caption text-ink/60 mt-auto">4 people · 46 answers · 95% CI −41 to +8 pts</p>
         </div>
       </div>
+      <p className="slide-subtitle text-center mt-12 rise" style={d(900)}>
+        Same tools. <span className="serif text-hurt">Opposite outcome.</span>
+      </p>
     </Frame>
   );
 }
 
-/* 7 WORSE */
+/* 7 WHO DECIDES */
 function Worse() {
-  const cards: { v: string; t: string; s?: string; small?: boolean }[] = [
-    { v: "2 times", t: "switched away from a right answer" },
-    { v: "7%", t: "ended wrong — and more confident" },
-    { v: "Prediction on record", t: "AI shown first: fewer mistakes caught?", s: "Written before any data. Test running now.", small: true },
+  const cols = [
+    { t: "AI alone", c: "text-ink/70", b: "!border-t-ink/30", items: ["Algorithmic trading", "Network routing", "Data extraction"] },
+    { t: "Centaur", c: "text-helped", b: "!border-t-helped", items: ["Medical diagnostics", "Legal review", "Fraud detection"], hl: true },
+    { t: "Human only", c: "text-hurt", b: "!border-t-hurt", items: ["Judicial sentencing", "Palliative care", "Crisis negotiation"] },
   ];
   return (
-    <Frame kicker="When AI makes people worse">
-      <h2 className="slide-title rise">The <span className="serif text-hurt">quiet</span> damage.</h2>
-      <div className="flex-1 grid grid-cols-3 gap-10 mt-16">
-        {cards.map((c, i) => (
-          <div key={c.v} className="glass p-12 flex flex-col rise border-t-4 !border-t-hurt" style={d(300 + i * 250)}>
-            <div className={`font-semibold text-hurt leading-none ${c.small ? "slide-subtitle mt-2" : "text-[100px]"}`}>{c.v}</div>
-            <p className="slide-body text-ink/80 mt-auto">{c.t}</p>
-            {c.s && <p className="slide-caption text-ink/60 mt-3">{c.s}</p>}
+    <Frame kicker="Who should decide?">
+      <h2 className="slide-title rise">Pair them <span className="serif text-helped">where each is better.</span></h2>
+      <div className="flex-1 grid grid-cols-3 gap-10 mt-14">
+        {cols.map((col, i) => (
+          <div key={col.t} className={`glass p-12 flex flex-col gap-6 rise border-t-4 ${col.b} ${col.hl ? "scale-[1.04] shadow-2xl" : ""}`} style={d(300 + i * 250)}>
+            <div className={`slide-subtitle font-semibold ${col.c}`}>{col.t}</div>
+            {col.items.map((it) => <div key={it} className="slide-body text-ink/80">{it}</div>)}
+            {col.hl && <div className="mt-auto slide-caption text-helped font-medium">← we test this zone</div>}
           </div>
         ))}
       </div>
+      <p className="slide-caption text-ink/60 text-center mt-10 rise" style={d(1200)}>“Humans and AI work best when each does what they do better.” — MIT Sloan</p>
     </Frame>
   );
 }
@@ -380,7 +381,7 @@ export const slides = [
   { title: "The Centaur Test", C: Centaur },
   { title: "Live jury test", C: Jury },
   { title: "Results", C: Results },
-  { title: "When AI makes people worse", C: Worse },
+  { title: "Who should decide", C: Worse },
   { title: "Any company's cases", C: AnyCompany },
   { title: "Why now", C: WhyNow },
   { title: "Market & competition", C: Market },
