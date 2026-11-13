@@ -6,7 +6,7 @@ type Search = { slide?: number };
 
 export const Route = createFileRoute("/")({
   validateSearch: (s: Record<string, unknown>): Search => {
-    const n = Number(s.slide);
+    const n = Number(s["slide"]);
     return Number.isFinite(n) && n >= 1 ? { slide: Math.floor(n) } : {};
   },
   head: () => ({
@@ -27,6 +27,7 @@ function Deck() {
   const navigate = Route.useNavigate();
   const total = slides.length;
   const idx = Math.min(total - 1, Math.max(0, (slide ?? 1) - 1));
+  const current = slides[idx]!;
   const box = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(0.3);
 
@@ -64,11 +65,11 @@ function Deck() {
   }, [go, idx, total]);
 
   useEffect(() => {
-    document.title = `${idx + 1}/${total} — ${slides[idx].title}`;
+    document.title = `${idx + 1}/${total} — ${current.title}`;
   }, [idx, total]);
 
   const touchX = useRef<number | null>(null);
-  const S = slides[idx].C;
+  const S = current.C;
 
   return (
     <div
