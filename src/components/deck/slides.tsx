@@ -73,26 +73,37 @@ function Hook() {
 
 /* 2 PROBLEM */
 function Problem() {
-  const rows = [
-    { icon: Scale, text: "AI helps. AI hurts. Most tools can't tell the difference.", tone: "text-ink" },
-    { icon: Handshake, text: "So we test three: human alone · AI alone · human + AI", tone: "text-ink" },
-    { icon: AlertTriangle, text: "And we measure reliance: followed · ignored · followed too readily", tone: "text-hurt" },
-  ];
+  const node = "glass rounded-[28px] px-12 py-8 flex flex-col items-center gap-3";
   return (
     <Frame kicker="The problem statement">
       <h2 className="slide-title rise" style={d(100)}>
-        Pairing people with AI <span className="serif text-helped">can help.</span>
+        AI <span className="serif text-helped">helps.</span> AI <span className="serif text-hurt">hurts.</span>
       </h2>
-      <h2 className="slide-title rise text-hurt mt-4" style={d(300)}>It can also make wrong feel right.</h2>
-      <div className="mt-16 flex flex-col gap-6">
-        {rows.map((r, i) => (
-          <div key={r.text} className="rise glass rounded-full px-10 py-7 flex items-center gap-8" style={d(600 + i * 220)}>
-            <div className="size-16 rounded-full bg-ink/10 grid place-items-center shrink-0">
-              <r.icon className="size-8 text-ink/80" />
-            </div>
-            <div className={`slide-body ${r.tone}`}>{r.text}</div>
+      <p className="slide-subtitle text-ink/70 mt-6 rise" style={d(350)}>Most tools can't tell the difference.</p>
+
+      <div className="flex-1 flex flex-col items-center justify-center gap-16">
+        <div className="flex items-center gap-10">
+          <div className={`rise ${node}`} style={d(600)}>
+            <Bot className="size-14 text-ink/80" />
+            <div className="slide-caption text-ink/70">AI</div>
           </div>
-        ))}
+          <ArrowRight className="size-12 text-ink/30 rise" style={d(760)} />
+          <div className="rise relative" style={d(880)}>
+            <div className={`${node} px-16`}>
+              <User className="size-14 text-ink/80" />
+              <div className="slide-caption text-ink/70">Human</div>
+            </div>
+            <div className="absolute -top-7 -right-7 size-16 rounded-full bg-hurt grid place-items-center pulse">
+              <span className="text-[42px] font-semibold text-navy leading-none">?</span>
+            </div>
+          </div>
+          <ArrowRight className="size-12 text-ink/30 rise" style={d(1020)} />
+          <div className={`rise ${node}`} style={d(1140)}>
+            <CheckCircle2 className="size-14 text-ink/80" />
+            <div className="slide-caption text-ink/70">Decision</div>
+          </div>
+        </div>
+        <p className="slide-body text-ink/80 rise" style={d(1320)}>Checking — or just approving?</p>
       </div>
     </Frame>
   );
