@@ -91,7 +91,7 @@ function Deck() {
         <div key={idx} className="rise" style={{ animationDuration: ".5s" }}>
           <S />
         </div>
-        <div className="absolute bottom-10 right-14 slide-chrome text-white/40 tabular-nums">
+        <div className="absolute bottom-10 right-14 slide-chrome text-ink/45 tabular-nums">
           {String(idx + 1).padStart(2, "0")} / {total}
         </div>
       </div>
