@@ -385,8 +385,8 @@ function Close() {
 export const slides = [
   { title: "Would you notice?", C: Hook },
   { title: "The problem", C: Problem },
-  { title: "What we measure", C: Measure },
   { title: "The Centaur Test", C: Centaur },
+  { title: "What we measure", C: Measure },
   { title: "Live jury test", C: Jury },
   { title: "Results", C: Results },
   { title: "Who should decide", C: Worse },
