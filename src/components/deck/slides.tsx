@@ -220,30 +220,6 @@ function Results() {
   );
 }
 
-/* 7 WHO DECIDES */
-function Worse() {
-  const cols = [
-    { t: "AI alone", c: "text-ink/70", b: "!border-t-ink/30", items: ["Algorithmic trading", "Network routing", "Data extraction"] },
-    { t: "Centaur", c: "text-helped", b: "!border-t-helped", items: ["Medical diagnostics", "Legal review", "Fraud detection"], hl: true },
-    { t: "Human only", c: "text-hurt", b: "!border-t-hurt", items: ["Judicial sentencing", "Palliative care", "Crisis negotiation"] },
-  ];
-  return (
-    <Frame kicker="Who should decide?">
-      <h2 className="slide-title rise">Pair them <span className="serif text-helped">where each is better.</span></h2>
-      <div className="flex-1 grid grid-cols-3 gap-10 mt-14">
-        {cols.map((col, i) => (
-          <div key={col.t} className={`glass p-12 flex flex-col gap-6 rise border-t-4 ${col.b} ${col.hl ? "scale-[1.04] shadow-2xl" : ""}`} style={d(300 + i * 250)}>
-            <div className={`slide-subtitle font-semibold ${col.c}`}>{col.t}</div>
-            {col.items.map((it) => <div key={it} className="slide-body text-ink/80">{it}</div>)}
-            {col.hl && <div className="mt-auto slide-caption text-helped font-medium">★ This is where we test</div>}
-          </div>
-        ))}
-      </div>
-      <p className="slide-caption text-ink/60 text-center mt-10 rise" style={d(1200)}>“Humans and AI work best when each does what they do better.” — MIT Sloan</p>
-    </Frame>
-  );
-}
-
 /* 8 ANY COMPANY */
 function AnyCompany() {
   const cards = [
