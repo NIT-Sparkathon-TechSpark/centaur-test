@@ -176,23 +176,6 @@ function Centaur() {
   );
 }
 
-/* 5 JURY */
-function Jury() {
-  return (
-    <Frame kicker="Live jury test">
-      <div className="flex-1 flex items-center gap-28">
-        <div className="flex-1">
-          <h2 className="slide-title-lg rise" style={d(100)}>Your turn.<br /><span className="serif text-helped">1 minute.</span></h2>
-          <p className="slide-subtitle text-ink/85 mt-12 rise" style={d(400)}>3 questions.<br />One AI answer is wrong. 👀</p>
-        </div>
-        <div className="rise rounded-[40px] p-10 glass" style={d(300)}>
-          <QRCodeSVG value={JURY_URL} size={560} bgColor="transparent" fgColor="#1b2540" level="M" />
-        </div>
-      </div>
-    </Frame>
-  );
-}
-
 /* 6 RESULTS */
 function Results() {
   const rows = [
