@@ -92,7 +92,7 @@ function Problem() {
         Pairing people with AI <span className="serif text-helped">can help.</span>
       </h2>
       <h2 className="slide-title rise text-hurt mt-4" style={d(300)}>It can also make wrong feel right.</h2>
-      <div className="mt-16 flex flex-col gap-6">
+      <div className="mt-16 flex flex-col gap-6 max-w-[1340px]">
         {rows.map((r, i) => (
           <div key={r.text} className="rise glass rounded-full px-10 py-7 flex items-center gap-8" style={d(600 + i * 220)}>
             <div className="size-16 rounded-full bg-ink/10 grid place-items-center shrink-0">
