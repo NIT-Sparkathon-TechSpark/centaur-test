@@ -114,7 +114,7 @@ function Measure() {
         <div className="slide-body text-ink/80 text-center rise">AI wrong</div>
         <div className="slide-body text-ink/80 self-center rise">Followed</div>
         <div className={`${cell} bg-helped/15 text-helped`} style={d(200)}><Sparkles className="size-12" />Helped</div>
-        <div className="rise" style={d(400)}><div className={`${cell.replace(" rise","")} h-full bg-hurt text-ink pulse`}><AlertTriangle className="size-12" />Followed too readily</div></div>
+        <div className="rise" style={d(400)}><div className={`${cell.replace(" rise","")} h-full bg-hurt text-oklch(0.98_0_0) font-semibold pulse`}><AlertTriangle className="size-12" />Followed too readily</div></div>
         <div className="slide-body text-ink/80 self-center rise">Ignored</div>
         <div className={`${cell} bg-amber/15 text-amber`} style={d(600)}>Missed good advice</div>
         <div className={`${cell} bg-helped/15 text-helped`} style={d(800)}><ShieldCheck className="size-12" />Caught the mistake</div>
