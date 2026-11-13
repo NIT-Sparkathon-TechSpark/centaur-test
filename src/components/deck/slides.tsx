@@ -50,8 +50,11 @@ function Hook() {
             Would you <span className="serif text-hurt">notice</span> if your AI was wrong?
           </h1>
           <div className="mt-16 flex items-end gap-8 rise" style={d(600)}>
-            <div className="text-[200px] leading-none font-semibold tracking-tight text-hurt"><Ph>X%</Ph></div>
-            <p className="slide-body text-ink/85 max-w-[520px] pb-6">followed the AI when it was wrong.</p>
+            <div className="text-[200px] leading-none font-semibold tracking-tight text-hurt">40%</div>
+            <div className="pb-6">
+              <p className="slide-body text-ink/85 max-w-[520px]">followed the AI when it was wrong.</p>
+              <p className="slide-caption text-ink/60 mt-3">6 of 15 answers · 4 people · our pilot</p>
+            </div>
           </div>
         </div>
         <div className="rise" style={d(400)}><div className="floaty">
@@ -181,9 +184,9 @@ function Jury() {
 /* 6 RESULTS */
 function Results() {
   const bars = [
-    { l: "People alone", v: "A%", h: 55, c: "bg-ink/25" },
-    { l: "AI alone", v: "B%", h: 70, c: "bg-ink/40" },
-    { l: "People + AI", v: "C%", h: 62, c: "bg-helped" },
+    { l: "People alone", v: "46%", h: 55, c: "bg-ink/25" },
+    { l: "AI alone", v: "67%", h: 70, c: "bg-ink/40" },
+    { l: "People + AI", v: "52%", h: 62, c: "bg-helped" },
   ];
   return (
     <Frame kicker="Results">
@@ -192,7 +195,7 @@ function Results() {
         <div className="flex items-end gap-14 h-[600px]">
           {bars.map((b, i) => (
             <div key={b.l} className="flex flex-col items-center justify-end h-full w-[220px]">
-              <div className="slide-subtitle font-semibold mb-4 rise" style={d(900 + i * 200)}><Ph>{b.v}</Ph></div>
+              <div className="slide-subtitle font-semibold mb-4 rise" style={d(900 + i * 200)}>{b.v}</div>
               <div className={`w-full rounded-t-[28px] grow ${b.c}`} style={{ height: `${b.h}%`, ...d(300 + i * 200) }} />
               <div className="slide-caption text-ink/85 mt-4">{b.l}</div>
             </div>
@@ -201,8 +204,8 @@ function Results() {
         <div className="flex-1 pb-20 rise" style={d(1400)}>
           <div className="glass p-14 inline-block">
             <div className="slide-kicker text-ink/80">Centaur gain</div>
-            <div className="text-[150px] leading-none font-semibold text-helped mt-4"><Ph>±G</Ph> <span className="slide-subtitle">pts</span></div>
-            <div className="slide-caption text-ink/85 mt-6"><Ph>N</Ph> people · 95% CI <Ph>L–H</Ph></div>
+            <div className="text-[150px] leading-none font-semibold text-hurt mt-4">−15 <span className="slide-subtitle">pts</span></div>
+            <div className="slide-caption text-ink/85 mt-6">4 people · 46 answers · 95% CI −41 to +8 pts</div>
           </div>
         </div>
       </div>
@@ -212,10 +215,10 @@ function Results() {
 
 /* 7 WORSE */
 function Worse() {
-  const cards = [
-    { v: "K times", t: "switched away from a right answer" },
-    { v: "W%", t: "ended wrong — and more confident" },
-    { v: "?", t: "AI shown first: fewer mistakes caught?" },
+  const cards: { v: string; t: string; s?: string; small?: boolean }[] = [
+    { v: "2 times", t: "switched away from a right answer" },
+    { v: "7%", t: "ended wrong — and more confident" },
+    { v: "Prediction on record", t: "AI shown first: fewer mistakes caught?", s: "Written before any data. Test running now.", small: true },
   ];
   return (
     <Frame kicker="When AI makes people worse">
@@ -223,8 +226,9 @@ function Worse() {
       <div className="flex-1 grid grid-cols-3 gap-10 mt-16">
         {cards.map((c, i) => (
           <div key={c.v} className="glass p-12 flex flex-col rise border-t-4 !border-t-hurt" style={d(300 + i * 250)}>
-            <div className="text-[100px] leading-none font-semibold text-hurt"><Ph>{c.v}</Ph></div>
+            <div className={`font-semibold text-hurt leading-none ${c.small ? "slide-subtitle mt-2" : "text-[100px]"}`}>{c.v}</div>
             <p className="slide-body text-ink/80 mt-auto">{c.t}</p>
+            {c.s && <p className="slide-caption text-ink/60 mt-3">{c.s}</p>}
           </div>
         ))}
       </div>
@@ -354,7 +358,7 @@ function Close() {
         <div className="flex-1">
           <h2 className="slide-title rise text-ink/80">Everyone relies on the human in the loop. Nobody tests it.</h2>
           <div className="text-[180px] leading-none mt-12 serif text-helped rise" style={d(700)}>Now you can.</div>
-          <div className="slide-body mt-16 text-ink/85 rise" style={d(1200)}><Ph>Name 1 · Name 2 · Name 3 · Name 4</Ph></div>
+          <div className="slide-body mt-16 text-ink/85 rise" style={d(1200)}>Jay Shiroya · Srivathsa N Rao · Pranav Tiwari · Bohdan Zdorovets</div>
           <div className="slide-chrome mt-4 text-helped rise" style={d(1300)}>#NiTSparkathon</div>
         </div>
         <div className="rise glass p-8" style={d(1000)}>
