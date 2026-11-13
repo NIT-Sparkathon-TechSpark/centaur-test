@@ -45,19 +45,15 @@ function Hook() {
     <Frame>
       <div className="flex h-full items-center gap-24">
         <div className="flex-1">
-          <h1 className="slide-title-lg rise" style={d(150)}>
+          <h1 className="slide-title-lg rise" style={{ ...d(150), fontSize: "152px", lineHeight: 0.96 }}>
             The AI said <span className="serif text-hurt">approve.</span>
             <br />
             She did.
           </h1>
-          <p className="slide-subtitle text-ink/70 mt-8 rise" style={d(400)}>The policy said no.</p>
-          <div className="mt-16 flex items-end gap-8 rise" style={d(600)}>
-            <div className="text-[200px] leading-none font-semibold tracking-tight text-hurt">40%</div>
-            <p className="slide-caption text-ink/60 pb-8">6 of 15 answers · 4 people · our pilot</p>
-          </div>
+          <p className="slide-subtitle text-ink/70 mt-10 rise" style={{ ...d(400), fontSize: "54px" }}>The policy said no.</p>
         </div>
         <div className="rise" style={d(400)}><div className="floaty">
-          <div className="w-[400px] h-[720px] rounded-[64px] border-[10px] border-ink/15 bg-navy-2 p-8 flex flex-col gap-6 shadow-2xl">
+          <div className="w-[400px] h-[560px] rounded-[64px] border-[10px] border-ink/15 bg-navy-2 p-8 flex flex-col gap-6 shadow-2xl">
             <div className="mx-auto h-3 w-28 rounded-full bg-ink/20" />
             <div className="self-end glass px-6 py-4 slide-caption max-w-[80%]">Is this refund allowed?</div>
             <div className="glass p-6 relative">
