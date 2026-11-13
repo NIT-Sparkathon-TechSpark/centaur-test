@@ -53,7 +53,7 @@ function Hook() {
           <p className="slide-subtitle text-ink/70 mt-10 rise" style={{ ...d(400), fontSize: "54px" }}>The policy said no.</p>
         </div>
         <div className="rise" style={d(400)}><div className="floaty">
-          <div className="w-[400px] h-[720px] rounded-[64px] border-[10px] border-ink/15 bg-navy-2 p-8 flex flex-col gap-6 shadow-2xl">
+          <div className="w-[400px] h-[560px] rounded-[64px] border-[10px] border-ink/15 bg-navy-2 p-8 flex flex-col gap-6 shadow-2xl">
             <div className="mx-auto h-3 w-28 rounded-full bg-ink/20" />
             <div className="self-end glass px-6 py-4 slide-caption max-w-[80%]">Is this refund allowed?</div>
             <div className="glass p-6 relative">
