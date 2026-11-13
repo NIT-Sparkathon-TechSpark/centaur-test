@@ -384,7 +384,6 @@ export const slides = [
   { title: "What we measure", C: Measure },
   { title: "Live jury test", C: Jury },
   { title: "Results", C: Results },
-  { title: "Who should decide", C: Worse },
   { title: "Any company's cases", C: AnyCompany },
   { title: "Why now", C: WhyNow },
   { title: "Market & competition", C: Market },
