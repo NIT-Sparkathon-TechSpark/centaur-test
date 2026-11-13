@@ -270,7 +270,6 @@ function WhyNow() {
       <h2 className="slide-title rise">A year to prove <span className="serif text-helped">human oversight works.</span></h2>
       <div className="flex-1 relative mt-10">
         <div className="absolute left-0 right-0 top-1/2 h-1 bg-white/15" />
-        <div className="absolute left-0 top-1/2 h-1 bg-helped grow" style={{ width: "100%", transformOrigin: "left", animationName: "none", ...d(300) }} />
         <div className="grid grid-cols-2 gap-24 h-full">
           <div className="flex flex-col justify-start rise" style={d(400)}>
             <Scale className="size-16 text-helped" />
@@ -314,7 +313,7 @@ function Market() {
           <div className="absolute left-1/2 top-10 bottom-10 w-px bg-white/15" />
           <div className="absolute top-1/2 left-10 right-10 h-px bg-white/15" />
           <div className="absolute bottom-3 left-0 right-0 text-center slide-chrome text-white/50">tests knowledge → tests behaviour</div>
-          <div className="absolute left-3 top-1/2 -translate-y-1/2 -rotate-90 origin-left translate-x-4 slide-chrome text-white/50" style={{ transformOrigin: "center", left: -170 }}>tests the AI → tests people</div>
+          <div className="absolute top-3 left-0 right-0 text-center slide-chrome text-white/50">↑ tests the people using it · ↓ tests the AI</div>
           {dots.map((p, i) => (
             <div key={p.t} className="absolute flex items-center gap-3 rise" style={{ left: `${p.x}%`, top: `${p.y}%`, ...d(800 + i * 200) }}>
               <span className="size-5 rounded-full bg-white/50 shrink-0" />
@@ -322,7 +321,7 @@ function Market() {
             </div>
           ))}
           <div className="absolute flex items-center gap-4 rise" style={{ left: "62%", top: "12%", ...d(1500) }}>
-            <span className="size-10 rounded-full bg-helped pulse shrink-0" style={{ animationName: "softpulse" }} />
+            <span className="size-10 rounded-full bg-helped pulse shrink-0" />
             <span className="slide-caption font-semibold text-helped">The Centaur Test</span>
           </div>
         </div>
