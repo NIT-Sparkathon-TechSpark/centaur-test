@@ -45,11 +45,14 @@ function Hook() {
     <Frame>
       <div className="flex h-full items-center gap-24">
         <div className="flex-1">
-          <div className="slide-kicker text-helped rise">The Centaur Test · #NiTSparkathon</div>
+          <div className="slide-kicker text-helped rise">A refund request · a Tuesday afternoon</div>
           <h1 className="slide-title-lg mt-10 rise" style={d(150)}>
-            Would you <span className="serif text-hurt">notice</span> if your AI was wrong?
+            The AI said <span className="serif text-hurt">approve.</span>
+            <br />
+            She did.
           </h1>
-          <div className="mt-16 flex items-end gap-8 rise" style={d(600)}>
+          <p className="slide-subtitle text-ink/70 mt-8 rise" style={d(400)}>The policy said no.</p>
+          <div className="mt-14 flex items-end gap-8 rise" style={d(600)}>
             <div className="text-[200px] leading-none font-semibold tracking-tight text-hurt">40%</div>
             <div className="pb-6">
               <p className="slide-body text-ink/85 max-w-[520px]">Even in sensitive scenarios humans followed the AI when it was wrong.</p>
