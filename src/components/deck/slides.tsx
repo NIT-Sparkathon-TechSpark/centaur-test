@@ -344,7 +344,6 @@ export const slides = [
   { title: "The problem", C: Problem },
   { title: "The Centaur Test", C: Centaur },
   { title: "What we measure", C: Measure },
-  { title: "Live jury test", C: Jury },
   { title: "Results", C: Results },
   { title: "Any company's cases", C: AnyCompany },
   { title: "Why now", C: WhyNow },
