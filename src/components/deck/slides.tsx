@@ -73,7 +73,7 @@ function Hook() {
 
 /* 2 PROBLEM */
 function Problem() {
-  const node = "glass rounded-[28px] px-12 py-8 flex flex-col items-center gap-3";
+  const node = "glass rounded-[32px] px-16 py-12 flex flex-col items-center gap-4";
   return (
     <Frame kicker="The problem statement">
       <h2 className="slide-title rise" style={d(100)}>
@@ -82,28 +82,28 @@ function Problem() {
       <p className="slide-subtitle text-ink/70 mt-6 rise" style={d(350)}>Most tools can't tell the difference.</p>
 
       <div className="flex-1 flex flex-col items-center justify-center gap-16">
-        <div className="flex items-center gap-10">
+        <div className="flex items-center gap-12">
           <div className={`rise ${node}`} style={d(600)}>
-            <Bot className="size-14 text-ink/80" />
-            <div className="slide-caption text-ink/70">AI</div>
+            <Bot className="size-20 text-ink/80" />
+            <div className="slide-body text-ink/70">AI</div>
           </div>
-          <ArrowRight className="size-12 text-ink/30 rise" style={d(760)} />
+          <ArrowRight className="size-16 text-ink/30 rise" style={d(760)} />
           <div className="rise relative" style={d(880)}>
-            <div className={`${node} px-16`}>
-              <User className="size-14 text-ink/80" />
-              <div className="slide-caption text-ink/70">Human</div>
+            <div className={`${node} px-20`}>
+              <User className="size-20 text-ink/80" />
+              <div className="slide-body text-ink/70">Human</div>
             </div>
             <div className="absolute -top-7 -right-7 size-16 rounded-full bg-hurt grid place-items-center pulse">
               <span className="text-[42px] font-semibold text-navy leading-none">?</span>
             </div>
           </div>
-          <ArrowRight className="size-12 text-ink/30 rise" style={d(1020)} />
+          <ArrowRight className="size-16 text-ink/30 rise" style={d(1020)} />
           <div className={`rise ${node}`} style={d(1140)}>
-            <CheckCircle2 className="size-14 text-ink/80" />
-            <div className="slide-caption text-ink/70">Decision</div>
+            <CheckCircle2 className="size-20 text-ink/80" />
+            <div className="slide-body text-ink/70">Decision</div>
           </div>
         </div>
-        <p className="slide-body text-ink/80 rise" style={d(1320)}>Checking — or just approving?</p>
+        <p className="slide-body-lg text-ink/80 rise" style={d(1320)}>Checking — or just approving?</p>
       </div>
     </Frame>
   );
