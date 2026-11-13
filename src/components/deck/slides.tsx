@@ -269,7 +269,7 @@ function WhyNow() {
     <Frame kicker="Why now">
       <h2 className="slide-title rise">A year to prove <span className="serif text-helped">human oversight works.</span></h2>
       <div className="flex-1 relative mt-10">
-        <div className="absolute left-0 right-0 top-1/2 h-1 bg-ink/25" />
+        <div className="absolute left-0 right-0 top-1/2 h-1 bg-ink/35" />
         <div className="grid grid-cols-2 gap-24 h-full">
           <div className="flex flex-col justify-start rise" style={d(400)}>
             <Scale className="size-16 text-helped" />
@@ -310,8 +310,8 @@ function Market() {
           </div>
         </div>
         <div className="relative glass rise" style={d(300)}>
-          <div className="absolute left-1/2 top-10 bottom-10 w-px bg-ink/25" />
-          <div className="absolute top-1/2 left-10 right-10 h-px bg-ink/25" />
+          <div className="absolute left-1/2 top-10 bottom-10 w-px bg-ink/35" />
+          <div className="absolute top-1/2 left-10 right-10 h-px bg-ink/35" />
           <div className="absolute bottom-3 left-0 right-0 text-center slide-chrome text-ink/85">tests knowledge → tests behaviour</div>
           <div className="absolute top-3 left-0 right-0 text-center slide-chrome text-ink/85">↑ tests the people using it · ↓ tests the AI</div>
           {dots.map((p, i) => (
