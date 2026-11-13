@@ -2,7 +2,7 @@ import { useEffect, useState, type ReactNode, type CSSProperties } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import {
   User, Bot, CheckCircle2, AlertTriangle, ArrowRight, ShieldCheck, Scale, CalendarClock,
-  ClipboardCheck, Repeat, Handshake, Receipt, Landmark, Sparkles, Fish, HelpCircle,
+  ClipboardCheck, Repeat, Handshake, Receipt, Landmark, Sparkles, Fish,
 } from "lucide-react";
 
 export const JURY_URL = "https://sparkathon-hazel.vercel.app/s/judge-demo?label=judge";
