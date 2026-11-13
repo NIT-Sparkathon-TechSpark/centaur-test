@@ -144,8 +144,8 @@ function Measure() {
 function Centaur() {
   const steps = [
     { n: 1, icon: User, t: "Answer alone" },
-    { n: 2, icon: Bot, t: "See AI advice", s: "some secretly wrong 🤫" },
-    { n: 3, icon: CheckCircle2, t: "Final answer" },
+    { n: 2, icon: Bot, t: "See AI advice", s: "some secretly wrong" },
+    { n: 3, icon: CheckCircle2, t: "Keep or switch?" },
   ];
   return (
     <Frame kicker="The Centaur Test">
@@ -167,11 +167,9 @@ function Centaur() {
           </div>
         ))}
       </div>
-      <div className="flex justify-center gap-6 rise" style={d(1400)}>
-        {["People alone", "AI alone", "People + AI"].map((c) => (
-          <span key={c} className="slide-chrome glass font-medium text-ink px-8 py-3 !rounded-full">{c}</span>
-        ))}
-      </div>
+      <p className="slide-subtitle text-center rise" style={d(1400)}>
+        Does <span className="serif text-helped">People + AI</span> beat either one alone?
+      </p>
     </Frame>
   );
 }
