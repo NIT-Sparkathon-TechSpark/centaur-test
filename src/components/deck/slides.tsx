@@ -207,7 +207,7 @@ function Results() {
         {rows.map((r, i) => (
           <div key={r.l} className="glass flex items-center gap-10 px-12 py-8 rise" style={d(300 + i * 250)}>
             <r.icon className={`size-14 ${r.c}`} />
-            <span className="slide-subtitle text-ink/60 w-[320px]">{r.l}</span>
+            <span className="slide-subtitle text-ink/60 w-[320px] whitespace-nowrap">{r.l}</span>
             <ArrowRight className={`size-10 ${r.c}`} />
             <span className={`slide-subtitle font-medium ${r.c}`}>{r.w}</span>
           </div>
