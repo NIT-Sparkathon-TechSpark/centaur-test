@@ -76,10 +76,10 @@ function Deck() {
       ref={box}
       className="deck fixed inset-0 overflow-hidden select-none cursor-pointer"
       onClick={(e) => go(e.clientX < window.innerWidth / 3 ? idx - 1 : idx + 1)}
-      onTouchStart={(e) => (touchX.current = e.touches[0].clientX)}
+      onTouchStart={(e) => (touchX.current = e.touches[0]?.clientX ?? null)}
       onTouchEnd={(e) => {
         if (touchX.current == null) return;
-        const dx = e.changedTouches[0].clientX - touchX.current;
+        const dx = (e.changedTouches[0]?.clientX ?? touchX.current) - touchX.current;
         if (Math.abs(dx) > 50) go(dx < 0 ? idx + 1 : idx - 1);
         touchX.current = null;
       }}
