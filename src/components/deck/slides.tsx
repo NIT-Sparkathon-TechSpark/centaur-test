@@ -45,12 +45,12 @@ function Hook() {
     <Frame>
       <div className="flex h-full items-center gap-24">
         <div className="flex-1">
-          <h1 className="slide-title-lg rise" style={d(150)}>
+          <h1 className="slide-title-lg rise" style={{ ...d(150), fontSize: "152px", lineHeight: 0.96 }}>
             The AI said <span className="serif text-hurt">approve.</span>
             <br />
             She did.
           </h1>
-          <p className="slide-subtitle text-ink/70 mt-8 rise" style={d(400)}>The policy said no.</p>
+          <p className="slide-subtitle text-ink/70 mt-10 rise" style={{ ...d(400), fontSize: "54px" }}>The policy said no.</p>
         </div>
         <div className="rise" style={d(400)}><div className="floaty">
           <div className="w-[400px] h-[720px] rounded-[64px] border-[10px] border-ink/15 bg-navy-2 p-8 flex flex-col gap-6 shadow-2xl">
