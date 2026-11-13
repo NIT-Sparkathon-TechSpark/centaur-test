@@ -196,25 +196,25 @@ function Jury() {
 /* 6 RESULTS */
 function Results() {
   const rows = [
-    { rank: "1st", l: "AI alone", icon: Bot, c: "text-ink", bg: "" },
-    { rank: "2nd", l: "People + AI", icon: Handshake, c: "text-hurt", bg: "!border-hurt/60 border-2", note: "people followed the AI's mistakes" },
-    { rank: "3rd", l: "People alone", icon: User, c: "text-ink/70", bg: "" },
+    { l: "In some cases", w: "AI alone did best", icon: Bot, c: "text-ink" },
+    { l: "In others", w: "people + AI did best", icon: Handshake, c: "text-helped" },
+    { l: "And sometimes", w: "people alone did best", icon: User, c: "text-ink/70" },
   ];
   return (
     <Frame kicker="What our pilot showed">
-      <h2 className="slide-title rise">Who got it <span className="serif text-helped">right</span> most often?</h2>
+      <h2 className="slide-title rise">It depends on <span className="serif text-helped">the scenario.</span></h2>
       <div className="flex-1 flex flex-col justify-center gap-8 max-w-[1300px]">
         {rows.map((r, i) => (
-          <div key={r.l} className={`glass ${r.bg} flex items-center gap-10 px-12 py-8 rise`} style={d(300 + i * 250)}>
-            <span className={`text-[72px] font-semibold leading-none w-[150px] ${r.c}`}>{r.rank}</span>
-            <r.icon className={`size-16 ${r.c}`} />
-            <span className={`slide-subtitle font-medium ${r.c}`}>{r.l}</span>
-            {r.note && <span className="slide-body text-hurt ml-auto serif">{r.note}</span>}
+          <div key={r.l} className="glass flex items-center gap-10 px-12 py-8 rise" style={d(300 + i * 250)}>
+            <r.icon className={`size-14 ${r.c}`} />
+            <span className="slide-subtitle text-ink/60">{r.l}</span>
+            <ArrowRight className={`size-10 ${r.c}`} />
+            <span className={`slide-subtitle font-medium ${r.c}`}>{r.w}</span>
           </div>
         ))}
       </div>
       <p className="slide-subtitle rise" style={d(1200)}>
-        Adding a human <span className="serif text-hurt">didn't fix the AI.</span>
+        So you can't assume. <span className="serif text-hurt">You have to measure.</span>
         <span className="slide-caption text-ink/55 ml-6">small early pilot</span>
       </p>
     </Frame>
