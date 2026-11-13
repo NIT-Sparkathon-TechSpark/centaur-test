@@ -321,15 +321,18 @@ function Business() {
 function Close() {
   return (
     <Frame>
-      <div className="flex-1 flex items-center gap-20">
+      <div className="flex-1 flex items-center gap-24">
         <div className="flex-1">
-          <h2 className="slide-title rise text-ink/80">Everyone relies on the human in the loop. Nobody tests it.</h2>
-          <div className="text-[180px] leading-none mt-12 serif text-helped rise" style={d(700)}>Now you can.</div>
-          <div className="slide-body mt-16 text-ink/85 rise" style={d(1200)}>Jay Shiroya · Srivathsa N Rao · Pranav Tiwari · Bohdan Zdorovets</div>
-          <div className="slide-chrome mt-4 text-helped rise" style={d(1300)}>#NiTSparkathon</div>
+          <p className="slide-body text-ink/70 rise">Everyone relies on the human in the loop. Nobody tests it.</p>
+          <div className="text-[160px] leading-none mt-6 serif text-helped rise" style={d(500)}>Now you can.</div>
+          <p className="slide-subtitle mt-12 rise" style={d(900)}>Your turn — <span className="serif text-hurt">1 minute.</span></p>
+          <p className="slide-body text-ink/70 mt-3 rise" style={d(1050)}>3 questions. One AI answer is wrong.</p>
+          <div className="slide-body mt-14 text-ink/85 rise" style={d(1300)}>Jay Shiroya · Srivathsa N Rao · Pranav Tiwari · Bohdan Zdorovets</div>
+          <div className="slide-chrome mt-3 text-helped rise" style={d(1400)}>#NiTSparkathon</div>
         </div>
-        <div className="rise glass p-8" style={d(1000)}>
-          <QRCodeSVG value={JURY_URL} size={300} bgColor="transparent" fgColor="#1b2540" />
+        <div className="rise rounded-[40px] p-10 glass text-center" style={d(1100)}>
+          <QRCodeSVG value={JURY_URL} size={430} bgColor="transparent" fgColor="#1b2540" level="M" />
+          <div className="slide-chrome text-ink/60 mt-5">scan to play</div>
         </div>
       </div>
     </Frame>
