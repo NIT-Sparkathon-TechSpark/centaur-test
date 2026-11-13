@@ -52,7 +52,7 @@ function Hook() {
           <div className="mt-16 flex items-end gap-8 rise" style={d(600)}>
             <div className="text-[200px] leading-none font-semibold tracking-tight text-hurt">40%</div>
             <div className="pb-6">
-              <p className="slide-body text-ink/85 max-w-[520px]">followed the AI when it was wrong.</p>
+              <p className="slide-body text-ink/85 max-w-[520px]">Even in sensitive scenarios humans followed the AI when it was wrong.</p>
               <p className="slide-caption text-ink/60 mt-3">6 of 15 answers · 4 people · our pilot</p>
             </div>
           </div>
