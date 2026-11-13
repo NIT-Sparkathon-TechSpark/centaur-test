@@ -56,7 +56,7 @@ function Hook() {
             </p>
           </div>
         </div>
-        <div className="floaty rise" style={d(400)}>
+        <div className="rise" style={d(400)}><div className="floaty">
           <div className="w-[400px] h-[720px] rounded-[64px] border-[10px] border-white/15 bg-navy-2 p-8 flex flex-col gap-6 shadow-2xl">
             <div className="mx-auto h-3 w-28 rounded-full bg-white/15" />
             <div className="self-end glass px-6 py-4 slide-caption max-w-[80%]">Is this refund allowed?</div>
@@ -69,7 +69,7 @@ function Hook() {
             </div>
             <div className="mt-auto rounded-full bg-helped/90 text-navy text-center py-4 slide-caption font-semibold">Approve</div>
           </div>
-        </div>
+        </div></div>
       </div>
     </Frame>
   );
@@ -78,9 +78,9 @@ function Hook() {
 /* 2 PROBLEM */
 function Problem() {
   const nodes = [
-    { label: "AI suggests", icon: Bot, x: 960, y: 250 },
-    { label: "Human approves", icon: User, x: 1280, y: 690, q: true },
-    { label: "Decision", icon: CheckCircle2, x: 640, y: 690 },
+    { label: "AI suggests", icon: Bot, x: 960, y: 370 },
+    { label: "Human approves", icon: User, x: 1300, y: 800, q: true },
+    { label: "Decision", icon: CheckCircle2, x: 620, y: 800 },
   ];
   return (
     <Frame kicker="The problem">
@@ -89,7 +89,7 @@ function Problem() {
       </h2>
       <svg className="absolute inset-0" viewBox="0 0 1920 1080">
         <circle cx="960" cy="560" r="300" fill="none" stroke="white" strokeOpacity=".2" strokeWidth="4"
-          strokeDasharray="1900" strokeDashoffset="1900" style={{ animation: "dash 1.6s .5s ease forwards" }} transform="translate(0,40)" />
+          strokeDasharray="1900" strokeDashoffset="1900" style={{ animation: "dash 1.6s .5s ease forwards" }} transform="translate(0,140)" />
       </svg>
       {nodes.map((n, i) => (
         <div key={n.label} className="absolute rise flex flex-col items-center" style={{ left: n.x - 140, top: n.y, width: 280, ...d(700 + i * 250) }}>
@@ -114,7 +114,7 @@ function Measure() {
         <div className="slide-body text-white/60 text-center rise">AI wrong</div>
         <div className="slide-body text-white/60 self-center rise">Followed</div>
         <div className={`${cell} bg-helped/15 text-helped`} style={d(200)}><Sparkles className="size-12" />Helped</div>
-        <div className={`${cell} bg-hurt text-white pulse`} style={d(400)}><AlertTriangle className="size-12" />Followed too readily</div>
+        <div className="rise" style={d(400)}><div className={`${cell.replace(" rise","")} h-full bg-hurt text-white pulse`}><AlertTriangle className="size-12" />Followed too readily</div></div>
         <div className="slide-body text-white/60 self-center rise">Ignored</div>
         <div className={`${cell} bg-amber/15 text-amber`} style={d(600)}>Missed good advice</div>
         <div className={`${cell} bg-helped/15 text-helped`} style={d(800)}><ShieldCheck className="size-12" />Caught the mistake</div>
