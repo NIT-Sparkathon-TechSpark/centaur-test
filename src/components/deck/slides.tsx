@@ -232,7 +232,7 @@ function Worse() {
           <div key={col.t} className={`glass p-12 flex flex-col gap-6 rise border-t-4 ${col.b} ${col.hl ? "scale-[1.04] shadow-2xl" : ""}`} style={d(300 + i * 250)}>
             <div className={`slide-subtitle font-semibold ${col.c}`}>{col.t}</div>
             {col.items.map((it) => <div key={it} className="slide-body text-ink/80">{it}</div>)}
-            {col.hl && <div className="mt-auto slide-caption text-helped font-medium">← we test this zone</div>}
+            {col.hl && <div className="mt-auto slide-caption text-helped font-medium">★ This is where we test</div>}
           </div>
         ))}
       </div>
