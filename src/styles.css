@@ -71,6 +71,7 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-ink: var(--ink);
+  --color-paper: var(--paper);
   --color-helped: var(--helped);
   --color-hurt: var(--hurt);
   --color-amber: var(--amber);
@@ -115,6 +116,7 @@
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
   --ink: oklch(0.26 0.045 262);
+  --paper: oklch(0.985 0.004 90);
   --navy: oklch(0.978 0.006 85);
   --navy-2: oklch(0.94 0.008 85);
   --helped: oklch(0.55 0.15 152);
