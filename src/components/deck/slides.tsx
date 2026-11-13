@@ -208,7 +208,7 @@ function Results() {
           {bars.map((b, i) => (
             <div key={b.l} className="flex flex-col items-center justify-end h-full w-[220px]">
               <div className="slide-subtitle font-semibold mb-4 rise" style={d(900 + i * 200)}>{b.v}</div>
-              <div className={`w-full rounded-t-[28px] grow ${b.c}`} style={{ height: `${b.h}%`, ...d(300 + i * 200) }} />
+              <div className={`w-full rounded-t-[28px] ${b.c}`} style={{ height: `${b.h}%`, ...d(300 + i * 200) }} />
               <div className="slide-caption text-ink/85 mt-4">{b.l}</div>
             </div>
           ))}
