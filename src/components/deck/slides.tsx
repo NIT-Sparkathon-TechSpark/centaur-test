@@ -51,9 +51,7 @@ function Hook() {
           </h1>
           <div className="mt-16 flex items-end gap-8 rise" style={d(600)}>
             <div className="text-[200px] leading-none font-semibold tracking-tight text-hurt"><Ph>X%</Ph></div>
-            <p className="slide-body text-ink/85 max-w-[520px] pb-6">
-              of final answers followed the AI when it was wrong. Our pilot, <Ph>N</Ph> people.
-            </p>
+            <p className="slide-body text-ink/85 max-w-[520px] pb-6">followed the AI when it was wrong.</p>
           </div>
         </div>
         <div className="rise" style={d(400)}><div className="floaty">
@@ -62,7 +60,7 @@ function Hook() {
             <div className="self-end glass px-6 py-4 slide-caption max-w-[80%]">Is this refund allowed?</div>
             <div className="glass p-6 relative">
               <div className="flex items-center gap-3 slide-caption text-ink/80"><Bot className="size-7" /> Assistant</div>
-              <p className="slide-caption mt-3">Yes, definitely. Policy 4.2 covers it — approve it. ✨</p>
+              <p className="slide-caption mt-3">Yes, definitely. Approve it. ✨</p>
               <div className="absolute -top-6 -right-6 size-16 rounded-full bg-hurt grid place-items-center pulse">
                 <AlertTriangle className="size-9" />
               </div>
@@ -78,18 +76,19 @@ function Hook() {
 /* 2 PROBLEM */
 function Problem() {
   const nodes = [
-    { label: "AI suggests", icon: Bot, x: 960, y: 370 },
-    { label: "Human approves", icon: User, x: 1300, y: 800, q: true },
-    { label: "Decision", icon: CheckCircle2, x: 620, y: 800 },
+    { label: "AI suggests", icon: Bot, x: 960, y: 400 },
+    { label: "Human approves", icon: User, x: 1300, y: 810, q: true },
+    { label: "Decision", icon: CheckCircle2, x: 620, y: 810 },
   ];
   return (
-    <Frame kicker="The problem">
-      <h2 className="slide-title max-w-[1500px] rise" style={d(100)}>
-        “Human in the loop” is the control everyone relies on, and <span className="serif text-hurt">nobody tests.</span>
+    <Frame>
+      <h2 className="slide-title rise" style={d(100)}>
+        Everyone trusts the <span className="serif text-helped">human in the loop.</span>
       </h2>
+      <h2 className="slide-title rise text-hurt mt-4" style={d(350)}>Nobody tests it.</h2>
       <svg className="absolute inset-0" viewBox="0 0 1920 1080">
         <circle cx="960" cy="560" r="300" fill="none" stroke="var(--ink)" strokeOpacity=".3" strokeWidth="6"
-          strokeDasharray="1900" strokeDashoffset="1900" style={{ animation: "dash 1.6s .5s ease forwards" }} transform="translate(0,140)" />
+          strokeDasharray="1900" strokeDashoffset="1900" style={{ animation: "dash 1.6s .5s ease forwards" }} transform="translate(0,170)" />
       </svg>
       {nodes.map((n, i) => (
         <div key={n.label} className="absolute rise flex flex-col items-center" style={{ left: n.x - 140, top: n.y, width: 280, ...d(700 + i * 250) }}>
@@ -114,10 +113,10 @@ function Measure() {
         <div className="slide-body text-ink/80 text-center rise">AI wrong</div>
         <div className="slide-body text-ink/80 self-center rise">Followed</div>
         <div className={`${cell} bg-helped/15 text-helped`} style={d(200)}><Sparkles className="size-12" />Helped</div>
-        <div className="rise" style={d(400)}><div className={`${cell.replace(" rise","")} h-full bg-hurt text-paper font-semibold pulse`}><AlertTriangle className="size-12" />Followed too readily</div></div>
+        <div className="rise" style={d(400)}><div className={`${cell.replace(" rise","")} h-full bg-hurt text-paper font-semibold pulse`}><AlertTriangle className="size-12" />Followed blindly</div></div>
         <div className="slide-body text-ink/80 self-center rise">Ignored</div>
-        <div className={`${cell} bg-amber/15 text-amber`} style={d(600)}>Missed good advice</div>
-        <div className={`${cell} bg-helped/15 text-helped`} style={d(800)}><ShieldCheck className="size-12" />Caught the mistake</div>
+        <div className={`${cell} bg-amber/15 text-amber`} style={d(600)}>Missed advice</div>
+        <div className={`${cell} bg-helped/15 text-helped`} style={d(800)}><ShieldCheck className="size-12" />Caught it</div>
       </div>
       <p className="slide-subtitle mt-10 text-center rise" style={d(1100)}>
         Accuracy hides this. <span className="serif text-helped">Reliance shows it.</span>
@@ -129,9 +128,9 @@ function Measure() {
 /* 4 CENTAUR TEST */
 function Centaur() {
   const steps = [
-    { n: 1, icon: User, t: "Answer alone", s: "+ confidence" },
-    { n: 2, icon: Bot, t: "See the AI's advice", s: "some secretly wrong 🤫" },
-    { n: 3, icon: CheckCircle2, t: "Final answer", s: "+ confidence" },
+    { n: 1, icon: User, t: "Answer alone" },
+    { n: 2, icon: Bot, t: "See AI advice", s: "some secretly wrong 🤫" },
+    { n: 3, icon: CheckCircle2, t: "Final answer" },
   ];
   return (
     <Frame kicker="The Centaur Test">
@@ -147,7 +146,7 @@ function Centaur() {
                 <span className="text-[96px] font-semibold text-ink/20 leading-none">{s.n}</span>
               </div>
               <div className="slide-subtitle mt-auto font-medium">{s.t}</div>
-              <div className={`slide-body mt-2 ${s.n === 2 ? "text-hurt" : "text-ink/80"}`}>{s.s}</div>
+              {s.s && <div className="slide-body mt-2 text-hurt">{s.s}</div>}
             </div>
             {i < 2 && <ArrowRight className="size-16 text-ink/45 rise shrink-0" style={d(550 + i * 300)} />}
           </div>
@@ -170,7 +169,6 @@ function Jury() {
         <div className="flex-1">
           <h2 className="slide-title-lg rise" style={d(100)}>Your turn.<br /><span className="serif text-helped">1 minute.</span></h2>
           <p className="slide-subtitle text-ink/85 mt-12 rise" style={d(400)}>3 questions.<br />One AI answer is wrong. 👀</p>
-          <p className="slide-caption text-ink/80 mt-12 rise break-all" style={d(600)}>{JURY_URL}</p>
         </div>
         <div className="rise rounded-[40px] p-10 glass" style={d(300)}>
           <QRCodeSVG value={JURY_URL} size={560} bgColor="transparent" fgColor="#1b2540" level="M" />
@@ -204,7 +202,7 @@ function Results() {
           <div className="glass p-14 inline-block">
             <div className="slide-kicker text-ink/80">Centaur gain</div>
             <div className="text-[150px] leading-none font-semibold text-helped mt-4"><Ph>±G</Ph> <span className="slide-subtitle">pts</span></div>
-            <div className="slide-caption text-ink/85 mt-6"><Ph>N</Ph> people · 95% interval <Ph>L to H</Ph></div>
+            <div className="slide-caption text-ink/85 mt-6"><Ph>N</Ph> people · 95% CI <Ph>L–H</Ph></div>
           </div>
         </div>
       </div>
@@ -215,9 +213,9 @@ function Results() {
 /* 7 WORSE */
 function Worse() {
   const cards = [
-    { v: "K times", t: "someone switched away from an answer that was already right" },
-    { v: "W%", t: "ended wrong and MORE confident" },
-    { v: "verdict", t: "AI shown first: fewer mistakes caught? (prediction written before the data)" },
+    { v: "K times", t: "switched away from a right answer" },
+    { v: "W%", t: "ended wrong — and more confident" },
+    { v: "?", t: "AI shown first: fewer mistakes caught?" },
   ];
   return (
     <Frame kicker="When AI makes people worse">
@@ -256,9 +254,6 @@ function AnyCompany() {
           </div>
         ))}
       </div>
-      <div className="slide-chrome text-ink/85 text-center rise" style={d(1100)}>
-        Live on Vercel + Neon · advice never sent before your own answer · aggregates only · 95% intervals
-      </div>
     </Frame>
   );
 }
@@ -267,19 +262,19 @@ function AnyCompany() {
 function WhyNow() {
   return (
     <Frame kicker="Why now">
-      <h2 className="slide-title rise">A year to prove <span className="serif text-helped">human oversight works.</span></h2>
+      <h2 className="slide-title rise">A year to prove <span className="serif text-helped">oversight works.</span></h2>
       <div className="flex-1 relative mt-10">
         <div className="absolute left-0 right-0 top-1/2 h-1 bg-ink/35" />
         <div className="grid grid-cols-2 gap-24 h-full">
           <div className="flex flex-col justify-start rise" style={d(400)}>
             <Scale className="size-16 text-helped" />
-            <div className="slide-subtitle font-medium mt-6">EU AI Act, Article 14</div>
-            <p className="slide-body text-ink/85 mt-3 max-w-[700px]">People overseeing high-risk AI must be aware of automation bias.</p>
+            <div className="slide-subtitle font-medium mt-6">EU AI Act · Art. 14</div>
+            <p className="slide-body text-ink/85 mt-3 max-w-[700px]">Overseers must know automation bias.</p>
           </div>
           <div className="flex flex-col justify-end rise" style={d(800)}>
             <CalendarClock className="size-16 text-hurt" />
             <div className="slide-subtitle font-medium mt-6">2 Dec 2027</div>
-            <p className="slide-body text-ink/85 mt-3">High-risk obligations apply.</p>
+            <p className="slide-body text-ink/85 mt-3">High-risk rules apply.</p>
           </div>
         </div>
       </div>
@@ -290,9 +285,9 @@ function WhyNow() {
 /* 10 MARKET */
 function Market() {
   const dots = [
-    { t: "Model evaluation tools", x: 30, y: 82 },
-    { t: "AI skills tests (e.g. Workera)", x: 18, y: 30 },
-    { t: "AI judgment quizzes (e.g. AssessAll)", x: 42, y: 18 },
+    { t: "Model eval tools", x: 30, y: 82 },
+    { t: "AI skills tests", x: 18, y: 30 },
+    { t: "AI judgment quizzes", x: 42, y: 18 },
   ];
   return (
     <Frame kicker="Market & competition">
@@ -300,20 +295,18 @@ function Market() {
         <div className="flex flex-col justify-center gap-16">
           <div className="rise" style={d(200)}>
             <div className="text-[100px] leading-none font-semibold">$<CountUp to={0.9} decimals={1} />B <span className="text-helped">→</span> $<CountUp to={5.8} decimals={1} />B</div>
-            <p className="slide-body text-ink/85 mt-4">AI governance market, 2024 → 2029</p>
-            <p className="slide-chrome text-ink/80 mt-2">Analyst forecast · MarketsandMarkets</p>
+            <p className="slide-body text-ink/85 mt-4">AI governance, 2024 → 2029</p>
           </div>
           <div className="rise" style={d(500)}>
             <div className="text-[100px] leading-none font-semibold">$<CountUp to={1.9} decimals={1} />B</div>
-            <p className="slide-body text-ink/85 mt-4">security awareness training, 2025 — the model we copy</p>
-            <p className="slide-chrome text-ink/80 mt-2">Analyst estimate · Mordor Intelligence</p>
+            <p className="slide-body text-ink/85 mt-4">security awareness training — our playbook</p>
           </div>
         </div>
         <div className="relative glass rise" style={d(300)}>
           <div className="absolute left-1/2 top-10 bottom-10 w-px bg-ink/35" />
           <div className="absolute top-1/2 left-10 right-10 h-px bg-ink/35" />
-          <div className="absolute bottom-3 left-0 right-0 text-center slide-chrome text-ink/85">tests knowledge → tests behaviour</div>
-          <div className="absolute top-3 left-0 right-0 text-center slide-chrome text-ink/85">↑ tests the people using it · ↓ tests the AI</div>
+          <div className="absolute bottom-3 left-0 right-0 text-center slide-chrome text-ink/85">knowledge → behaviour</div>
+          <div className="absolute top-3 left-0 right-0 text-center slide-chrome text-ink/85">↑ tests people · ↓ tests AI</div>
           {dots.map((p, i) => (
             <div key={p.t} className="absolute flex items-center gap-3 rise" style={{ left: `${p.x}%`, top: `${p.y}%`, ...d(800 + i * 200) }}>
               <span className="size-5 rounded-full bg-ink/40 shrink-0" />
@@ -333,9 +326,9 @@ function Market() {
 /* 11 BUSINESS */
 function Business() {
   const tiles = [
-    { icon: ClipboardCheck, t: "Reliance assessment", s: "One workflow · 4 weeks · fixed fee" },
-    { icon: Repeat, t: "Quarterly re-test", s: "Subscription · trend as audit evidence" },
-    { icon: Handshake, t: "Channel", s: "Assurance & audit firms already selling AI trust" },
+    { icon: ClipboardCheck, t: "Reliance assessment", s: "4 weeks · fixed fee" },
+    { icon: Repeat, t: "Quarterly re-test", s: "Subscription · audit evidence" },
+    { icon: Handshake, t: "Channel", s: "Assurance & audit firms" },
   ];
   return (
     <Frame kicker="Business model">
@@ -349,9 +342,6 @@ function Business() {
           </div>
         ))}
       </div>
-      <p className="slide-caption text-ink/80 text-center mt-10 rise" style={d(1100)}>
-        Platform cost per assessment ≈ 0 (no AI calls, serverless). Main cost: 3–5 days of case design.
-      </p>
     </Frame>
   );
 }
@@ -362,7 +352,7 @@ function Close() {
     <Frame>
       <div className="flex-1 flex items-center gap-20">
         <div className="flex-1">
-          <h2 className="slide-title rise text-ink/80">Human in the loop is the control everyone relies on, and nobody tests.</h2>
+          <h2 className="slide-title rise text-ink/80">Everyone relies on the human in the loop. Nobody tests it.</h2>
           <div className="text-[180px] leading-none mt-12 serif text-helped rise" style={d(700)}>Now you can.</div>
           <div className="slide-body mt-16 text-ink/85 rise" style={d(1200)}><Ph>Name 1 · Name 2 · Name 3 · Name 4</Ph></div>
           <div className="slide-chrome mt-4 text-helped rise" style={d(1300)}>#NiTSparkathon</div>
